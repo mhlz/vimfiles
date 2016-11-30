@@ -31,6 +31,9 @@ Plugin 'jelera/vim-javascript-syntax'
 Plugin 'vim-ruby/vim-ruby'
 Plugin 'tpope/vim-rails'
 
+" Symfony
+Plugin 'lunaru/vim-twig'
+
 call vundle#end()
 filetype plugin indent on
 set t_Co=256
@@ -134,3 +137,6 @@ let g:indet_guides_guide_size=1
 
 " make set list display all special chars
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
+
+" copy last yanked to system clipboard
+map <F3> :call system('xclip -sel clip -f', @0)<CR>
