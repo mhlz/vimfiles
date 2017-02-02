@@ -17,7 +17,6 @@ Plugin 'sickill/vim-sunburst'
 Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
 
@@ -26,13 +25,6 @@ Plugin 'Valloric/YouCompleteMe'
 " javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
-
-" vuejs
-Plugin 'posva/vim-vue'
-
-" ruby
-Plugin 'vim-ruby/vim-ruby'
-Plugin 'tpope/vim-rails'
 
 " Symfony
 Plugin 'lunaru/vim-twig'
