@@ -17,7 +17,6 @@ Plugin 'sickill/vim-sunburst'
 Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
-Plugin 'nathanaelkane/vim-indent-guides'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
 
@@ -27,8 +26,8 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
 
-" vuejs
-Plugin 'posva/vim-vue'
+" golang
+Plugin 'fatih/vim-go'
 
 " ruby
 Plugin 'vim-ruby/vim-ruby'
@@ -134,12 +133,11 @@ set expandtab
 set tabstop=4
 set shiftwidth=4
 
-" Indent guide style
-let g:indet_guides_start_level=2
-let g:indet_guides_guide_size=1
-
 " make set list display all special chars
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " copy last yanked to system clipboard
 map <F3> :call system('xclip -sel clip -f', @0)<CR>
+
+" Disable ycm preview
+let g:ycm_add_preview_to_completeopt = 1
