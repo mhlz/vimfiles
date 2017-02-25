@@ -156,4 +156,4 @@ let g:UltiSnipsEditSplit = 'vertical'
 let g:UltiSnipsUsePythonVersion = 2
 
 " Disable ycm preview
-let g:ycm_add_preview_to_completeopt = 1
+set completeopt-=preview
