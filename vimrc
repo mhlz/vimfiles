@@ -148,7 +148,7 @@ let g:ycm_key_list_select_completion = ['<tab>', '<C-n>', '<Down>']
 let g:ycm_key_list_previous_completion = ['<s-tab>', '<C-p>', '<Up>']
 
 " better key bindings for UltiSnipsExpandTrigger
-let g:UltiSnipsExpandTrigger = '<c-I>'
+let g:UltiSnipsExpandTrigger = '<c-j>'
 let g:UltiSnipsJumpForwardTrigger = '<tab>'
 let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetsDirectories = ['UltiSnips', 'plugins/vim-snippets/UltiSnips']
