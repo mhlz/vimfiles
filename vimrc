@@ -34,9 +34,6 @@ Plugin 'jelera/vim-javascript-syntax'
 " golang
 Plugin 'fatih/vim-go'
 
-" Symfony
-Plugin 'lunaru/vim-twig'
-
 call vundle#end()
 filetype plugin indent on
 set t_Co=256
@@ -157,3 +154,6 @@ let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
 let g:UltiSnipsSnippetsDirectories = ['UltiSnips', 'plugins/vim-snippets/UltiSnips']
 let g:UltiSnipsEditSplit = 'vertical'
 let g:UltiSnipsUsePythonVersion = 2
+
+" Disable ycm preview
+let g:ycm_add_preview_to_completeopt = 1
