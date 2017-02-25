@@ -12,19 +12,27 @@ Plugin 'VundleVim/Vundle.vim'
 " General plugins
 Plugin 'scrooloose/nerdtree'
 Plugin 'scrooloose/nerdcommenter'
-Plugin 'scrooloose/syntastic'
 Plugin 'sickill/vim-sunburst'
 Plugin 'tpope/vim-obsession'
 Plugin 'tpope/vim-surround'
 Plugin 'vim-airline/vim-airline'
 Plugin 'Raimondi/delimitMate'
 Plugin 'Valloric/YouCompleteMe'
+Plugin 'junegunn/goyo.vim'
+Plugin 'ctrlpvim/ctrlp.vim'
+
+" Snippets
+Bundle 'SirVer/ultisnips'
+Plugin 'honza/vim-snippets'
 
 " Language specific plugins
 
 " javascript
 Plugin 'pangloss/vim-javascript'
 Plugin 'jelera/vim-javascript-syntax'
+
+" golang
+Plugin 'fatih/vim-go'
 
 " Symfony
 Plugin 'lunaru/vim-twig'
@@ -66,7 +74,7 @@ set ttyfast
 " Use UTF-8 without BOM
 set encoding=utf-8 nobomb
 " Change mapleader
-let mapleader=","
+let mapleader=','
 " Don't add empty newlines at the end of files
 set binary
 set noeol
@@ -103,7 +111,7 @@ set scrolloff=3
 
 " Command to strip trailing whitespaces (:Sws)
 function! StripWhitespace()
-    let save_cursor=getpos(".")
+    let save_cursor=getpos('.')
     let old_query=getreg('/')
     :%s/\s\+$//e
     call setpos('-',save_cursor)
@@ -120,18 +128,32 @@ let g:NERDDefaultAlign = 'left'
 
 " map CtrlPMixed to ctrl-p
 map <C-p> :CtrlPMixed<CR>
+if executable('ag')
+    " Use Ag over Grep
+    set grepprg=ag\ --nogroup
+    " Use ag in CtrlP for listing files. Lightning fast and respects .gitignore
+    let g:ctrlp_user_command = 'ag %s -l -g ""'
+endif
 
 " Set tab to 4 spaces
 set expandtab
 set tabstop=4
 set shiftwidth=4
 
-" Indent guide style
-let g:indet_guides_start_level=2
-let g:indet_guides_guide_size=1
-
 " make set list display all special chars
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " copy last yanked to system clipboard
-map <F3> :call system('xclip -sel clip -f', @0)<CR>
+map <F3> :call system('xclip -sel clipboard -f', @0)<CR>
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<tab>', '<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<s-tab>', '<C-p>', '<Up>']
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = '<CR>'
+let g:UltiSnipsJumpForwardTrigger = '<tab>'
+let g:UltiSnipsJumpBackwardTrigger = '<s-tab>'
+let g:UltiSnipsSnippetsDirectories = ['UltiSnips', 'plugins/vim-snippets/UltiSnips']
+let g:UltiSnipsEditSplit = 'vertical'
+let g:UltiSnipsUsePythonVersion = 2
