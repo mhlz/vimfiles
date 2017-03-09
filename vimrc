@@ -21,10 +21,6 @@ Plugin 'Valloric/YouCompleteMe'
 Plugin 'junegunn/goyo.vim'
 Plugin 'ctrlpvim/ctrlp.vim'
 
-" Snippets
-Bundle 'SirVer/ultisnips'
-Plugin 'honza/vim-snippets'
-
 " Language specific plugins
 
 " javascript
@@ -43,10 +39,10 @@ syntax enable
 set background=dark
 colorscheme Sunburst
 
-set guifont=Inconsolata-g\ for\ Powerline\ 13
+" set guifont=Inconsolata-g\ for\ Powerline\ 13
 
-let g:airline_powerline_fonts = 1
-let g:Powerline_symbols = 'fancy'
+" let g:airline_powerline_fonts = 1
+" let g:Powerline_symbols = 'fancy'
 
 " Map F2 to nohl
 map <F2> :nohl<CR>
@@ -59,7 +55,7 @@ highlight LineNr guibg=black
 highlight LineNr ctermfg=black ctermbg=black
 
 " Use the X clipboard by default
-set clipboard=unnamedplus
+" set clipboard=unnamedplus
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in ins mode
@@ -74,7 +70,7 @@ set encoding=utf-8 nobomb
 let mapleader=','
 " Don't add empty newlines at the end of files
 set binary
-set noeol
+" set noeol
 " Make sure vim history works
 set viminfo+=!
 " Reduce splits to a single line
@@ -141,7 +137,7 @@ set shiftwidth=4
 set listchars=eol:$,tab:>-,trail:~,extends:>,precedes:<
 
 " copy last yanked to system clipboard
-map <F3> :call system('xclip -sel clipboard -f', @0)<CR>
+" map <F3> :call system('xclip -sel clipboard -f', @0)<CR>
 
 " make YCM compatible with UltiSnips (using supertab)
 let g:ycm_key_list_select_completion = ['<tab>', '<C-n>', '<Down>']
