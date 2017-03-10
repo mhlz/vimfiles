@@ -56,7 +56,7 @@ highlight LineNr guibg=black
 highlight LineNr ctermfg=black ctermbg=black
 
 " Use the X clipboard by default
-" set clipboard=unnamedplus
+set clipboard=unnamedplus
 " Enhance command-line completion
 set wildmenu
 " Allow cursor keys in ins mode
@@ -154,3 +154,14 @@ let g:UltiSnipsUsePythonVersion = 2
 
 " Disable ycm preview
 set completeopt-=preview
+
+tnoremap <Esc> <C-\><C-n>
+tnoremap <C-h> <C-\><C-n><C-w>h
+tnoremap <C-j> <C-\><C-n><C-w>j
+nnoremap <C-h> <C-w>h
+nnoremap <C-j> <C-w>j
+nnoremap <C-k> <C-w>k
+nnoremap <C-l> <C-w>l
+
+autocmd VimEnter * NERDTree
+autocmd VimEnter * wincmd p
